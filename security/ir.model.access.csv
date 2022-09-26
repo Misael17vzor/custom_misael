@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_success_level_base_user,success_level base user,model_success_level,base.group_user,1,0,0,0
+access_success_level_system,success_level system,model_success_level,sales_team.group_sale_manager,1,1,1,1

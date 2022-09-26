@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <menuitem
+        id="menu_success_level"
+        parent="purchase.menu_purchase_config"
+        action="success_level_view_action"
+    />
+
+</odoo>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="success_level_view_tree" model="ir.ui.view">
+        <field name="name">success.level.view.tree</field>
+        <field name="model">success.level</field>
+        <field name="arch" type="xml">
+            <tree string="Valores">
+                <field name="name"/>
+                <field name="lvl"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="success_level_view_form" model="ir.ui.view">
+        <field name="name">success.level.view.form</field>
+        <field name="model">success.level</field>
+        <field name="arch" type="xml">
+            <form string="Nivel de satisfacción">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name" required="True"/>
+                            <field name="lvl" />
+                            <field name="notes" attrs="{'invisible': [('name', '=', False)], 'required':True}"/>
+                            <!-- <field name="success_tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}"/> -->
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="success_level_view_action" model="ir.actions.act_window">
+        <field name="name">Nivel de satisfaccion</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">success.level</field>
+        <field name="view_id" ref="success_level_view_tree" />
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="inherit_view_id_inherit_success_level" model="ir.ui.view">
+        <field name="name">inherit.view.id.inherit.success.level</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase_stock.purchase_order_view_form_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='effective_date']" position="after">
+                <field name="success_level" options="{'no_create': True, 'no_create_edit':True}"/>
+            </xpath>
+        </field>
+    </record>
+
+
+</odoo>

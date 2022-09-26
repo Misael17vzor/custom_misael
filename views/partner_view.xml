@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <record id="res_partner_form_success_level" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.success.level</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//sheet/notebook/page[@name='internal_notes']/field[@name='comment']" position="before">
+                <!-- <field name="success_level" widget="section_and_note_one2many" mode="tree"/> -->
+                <field name="success_level">
+                    <tree string="Success Levels" editable="bottom">
+                        <field name="name"/>
+                        <field name="lvl" />
+                        <field name="notes" />
+                    </tree>
+                </field>
+            </xpath>
+          
+
+        </field>
+
+    </record>
+
+</odoo>
+
+ 
