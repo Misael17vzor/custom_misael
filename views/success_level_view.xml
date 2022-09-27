@@ -45,7 +45,7 @@
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase_stock.purchase_order_view_form_inherit"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='effective_date']" position="after">
+            <xpath expr="//field[@name='effective_date']" position="before">
                 <field name="success_level" options="{'no_create': True, 'no_create_edit':True}"/>
             </xpath>
         </field>

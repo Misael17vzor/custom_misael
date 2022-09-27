@@ -1,2 +1,1 @@
-
-from . import product_price
+from . import change_price

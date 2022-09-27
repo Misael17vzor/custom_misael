@@ -1,34 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <record id="product_price_action" model="ir.ui.view">
-            <field name="name">product.price</field>
-            <field name="model">product.template</field>
-            <field name="arch" type="xml">
-                <form>
-                   <p>Flag</p>
-                </form>
-            </field>
-        </record>
 
-        <act_window name="Product Price"
-            id="product_price_action"
-            res_model="product.template"
-            binding_model="product.product_template_search_view"
-            binding_views="form"
-            view_mode="form"
-            target="new"
-        />
+    <record id="view_change_price" model="ir.ui.view">
+        <field name="name">view.change.price</field>
+        <field name="model">change.price</field>
+        <field name="arch" type="xml">
+            <form string="Cambiar Precio">
+                <sheet>
+                    <group>
+                        <field name="product_ids">
+                            <tree>
+                                <field name="name" />
+                                <field name="list_price" />
+                            </tree>
+                        </field>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        
-        <record id="launch_the_wizard" model="ir.actions.act_window">
-            <field name="name">Launch the Wizard</field>
-            <field name="res_model">product.template</field>
-            <field name="view_mode">form</field>
-            <field name="target">new</field>
-            <field name="binding_model_id" ref="product.product_template_search_view"/>
-        </record>
+
+    <!-- Primito de MenuItem -->
+    <record id="action_view_change_price" model="ir.actions.act_window">
+        <!-- Etiqueta en lista de acciones-->
+        <field name="name">Cambiar Precio</field>
+        <!-- Indicamos a Odoo que es un acción sobre la ventana-->
+        <field name="type">ir.actions.act_window</field>
+        <!-- Indicamos el modelo de datos dentro del wizard.py(product_price.py)-->
+        <field name="res_model">change.price</field>
+        <!-- Como desplegar el wizard -->
+        <field name="view_mode">form</field>
+        <!-- Indicamos en que modelo se podrá desplegar -->
+        <field name="binding_model_id" ref="stock.model_product_template" />
+        <!-- Siempre sí es requerido Jejeje -->
+        <field name="target">new</field>
+        <!-- Indicamos sobre que tipo de vista se puede desplegar -->
+        <field name="binding_view_types">list</field>
+    </record>
 </odoo>
-
-
-
