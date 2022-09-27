@@ -1,5 +1,3 @@
-# Copyright 2021 Camptocamp SA
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl.html).
 
 {
     "name": "Success level",
@@ -8,7 +6,7 @@
     "author": "MisaelVz_Estrasol",
     "website": "",
     "category": "Purchase",
-    "depends": ["purchase","base","sale","product"],
+    "depends": ["purchase","base","sale"],
     "data": [
         "security/ir.model.access.csv",
         "views/success_level_view.xml",
