@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-
     <record id="view_change_price" model="ir.ui.view">
         <field name="name">view.change.price</field>
         <field name="model">change.price</field>
@@ -14,14 +13,12 @@
                                 <field name="name" />
                                 <field name="list_price" />
                             </tree>
-                        </field>
-                        
+                        </field>                        
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
-
 
     <!-- Primito de MenuItem -->
     <record id="action_view_change_price" model="ir.actions.act_window">
